@@ -59,28 +59,25 @@
        - Dữ liệu được xác thực trước khi lưu, đặc biệt đối với các mục không chọn từ menu.
        - Tất cả thông tin được lưu giữ tuân thủ các tiêu chuẩn bảo mật và quy định của hệ thống y tế Mid-Scotland.
    - Kết quả phân tích từng ca sử dụng:
-     + ### **Quản lý chắm sóc cá nhân**:
-       - Brief Description: Ca sử dụng này cho phép nhân viên lâm sàng quản lý thông tin bệnh nhân, bao gồm tạo hồ sơ mới, chỉnh sửa thông tin, và xem lịch sử điều trị.
-       - Flow of Events:
-         + Basic Flow:
-           - Nhân viên lâm sàng đăng nhập vào hệ thống.
-           - Hệ thống hiển thị giao diện tìm kiếm hồ sơ bệnh nhân.
-           - Nhân viên lâm sàng tìm kiếm hoặc chọn một bệnh nhân từ danh sách.
-           - Nhân viên lâm sàng xem, chỉnh sửa thông tin, hoặc tạo hồ sơ bệnh nhân mới.
-           - Hệ thống xác nhận thay đổi và lưu vào cơ sở dữ liệu.
-         + Alternative Flows:
-           - AF1: Không tìm thấy bệnh nhân: Nếu không có kết quả tìm kiếm, nhân viên lâm sàng được thông báo và có thể tạo hồ sơ bệnh nhân mới.
-           - AF2: Dữ liệu không hợp lệ: Nếu thông tin nhập vào không đúng định dạng, hệ thống hiển thị thông báo lỗi và yêu cầu sửa.
-       - Special Requirements:
-         + Phải xác thực thông tin đăng nhập của nhân viên.
-         + Dữ liệu nhập phải được kiểm tra định dạng và tính hợp lệ.
-       - Pre-Conditions:
-         + Nhân viên lâm sàng đã đăng nhập thành công vào hệ thống.
-         + Cơ sở dữ liệu bệnh nhân khả dụng.
-       - Post-Conditions:
-         + Hồ sơ bệnh nhân được tạo mới hoặc cập nhật.
-         + Các thay đổi được lưu trữ an toàn trong cơ sở dữ liệu.
-       - Extension Points: Tích hợp hệ thống hồ sơ quốc gia: Khi tạo hoặc chỉnh sửa hồ sơ, hệ thống có thể gửi thông tin tóm tắt đến hệ thống hồ sơ bệnh án quốc gia.
+   + ### **Quản lý chắm sóc cá nhân**:
+
+#### 1. Xác định các lớp phân tích
+
+Dựa trên yêu cầu của hệ thống Mentcare, các lớp phân tích cho ca sử dụng "Quản lý chăm sóc cá nhân" bao gồm:
+
+- **Patient**: Lớp đại diện cho bệnh nhân.
+- **ClinicalStaff**: Lớp đại diện cho nhân viên lâm sàng.
+- **Consultation**: Lớp đại diện cho buổi tư vấn.
+- **PatientRecord**: Lớp đại diện cho hồ sơ bệnh nhân.
+- **Diagnosis**: Lớp đại diện cho chẩn đoán.
+- **Treatment**: Lớp đại diện cho phương pháp điều trị.
+- **Medication**: Lớp đại diện cho thuốc được kê đơn.
+- **Referral**: Lớp đại diện cho việc giới thiệu bệnh nhân đến các bộ phận khác.
+
+#### 2. Mô tả hành vi thông qua biểu đồ sequence
+
+Dưới đây là biểu đồ sequence mô tả hành vi của ca sử dụng "Quản lý chăm sóc cá nhân":
+![diagram](https://www.planttext.com/plantuml/png/b98nJiD044NxFSM8dWkaG4XEIQJ8kA3TE4vs5NjihSVfgIYe8aH5Wq4KH22bzXOfDl8zvWHS0SKeWYM0IFtVznjh_vjTdvOa3LLPAcHCkO4WrQXZcPwJd4n48GtfM1SI2Ow6adI252PnRiP784iOXZuHv5XMAKdIENP0uETzBQUObxhimhuVHYQHb2L8NHZvuI0Pw_ZpkmC_3PD9OenCkomKmli9E3w1OTY3oBraCDFSh3DGR6-WR6iOiRr21QZS0ufXk6MzSWyYmyqZpDbU_jBQjmKzYBYfSnXLR6yrKBk2EJTF21dREos2tKbdsYqHPjoiQP-TRzb_E_izY9HRPX0hRfuHDelSrIZwErN0pMi1gBXv9P-1kRlF_-s9Tfv2jQksnYaKojK5R1QQxMK5PDXUY-X7xL-LmwuOxAuWLR5Tn31pIzWisXh5u4SrVUSEystdq_cckdiLKfhjLIMwmUp9VEWmKpUBTbKTCj4BLySVReJqQrUS9ZYkilGT003__mC0)
      + ### **Theo dõi bệnh nhân:**
         1. Các lớp phân tích:
            - Hồ sơ bệnh nhân : Quản lý thông tin cá nhân, lịch sử điều trị, và lịch hẹn của bệnh nhân.
