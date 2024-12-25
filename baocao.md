@@ -91,4 +91,4 @@ Hệ thống Mentcare được thiết kế theo kiến trúc client-server, tro
 ## 4. Thiết kế hệ thống con
 ## 5. Thiết kế các lớp
 ## 6. Kết luận
-Hệ thống Mentcare là một công cụ quan trọng trong việc quản lý và điều trị bệnh nhân tâm thần. Việc triển khai hệ thống này không chỉ mang lại lợi ích về mặt quản lý thông tin và an toàn cho bệnh nhân mà còn giúp các cơ sở y tế nâng cao hiệu quả điều trị và tuân thủ các quy định pháp luật.
+
